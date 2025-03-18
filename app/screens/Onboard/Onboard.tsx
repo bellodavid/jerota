@@ -1,0 +1,68 @@
+// components/WelcomeScreen.tsx
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
+import { HeroImage, SwipeButton } from './Components';
+import { Logo } from '../../../assets/icons';
+
+interface WelcomeScreenProps {}
+
+const WelcomeScreen: React.FC<WelcomeScreenProps> = () => {
+  const handleComplete = () => {
+    console.log('Swipe completed! Navigating to next screen...');
+  };
+
+  return (
+    <View style={styles.container}>
+      <HeroImage />
+
+      <View style={styles.contentContainer}>
+        <Logo height={70} />
+
+        <View style={styles.textContainer}>
+          <Text style={styles.title}>
+            The One App Where You Can Play, Stream And Earn.
+          </Text>
+        </View>
+
+        <SwipeButton onComplete={handleComplete} />
+
+        <View style={styles.paginationContainer}></View>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000',
+  },
+  contentContainer: {
+    position: 'absolute',
+    bottom: 40,
+    left: 0,
+    right: 0,
+    padding: 20,
+  },
+  textContainer: {
+    marginVertical: 30,
+  },
+  title: {
+    color: 'white',
+    fontSize: 36,
+    fontWeight: 'bold',
+    lineHeight: 42,
+  },
+  paginationContainer: {
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  paginationIndicator: {
+    width: 50,
+    height: 4,
+    backgroundColor: 'white',
+    borderRadius: 2,
+  },
+});
+
+export default WelcomeScreen;

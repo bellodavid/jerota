@@ -10,6 +10,7 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 import { pallets } from 'constant';
 import Welcome from 'screens/Auth/Welcome';
+import { OnboardNavigator } from 'navigation/Onboard';
 
 const theme: Theme = {
   colors: {
@@ -69,8 +70,8 @@ export default function LoadApp(): React.ReactElement | null {
       <BottomSheetModalProvider>
         <NavigationContainer {...{ theme }}>
           <SafeAreaProvider>
-            <Welcome />
-            <StatusBar style="dark" backgroundColor="transparent" translucent />
+            <OnboardNavigator />
+            <StatusBar style="light" backgroundColor="transparent" translucent />
           </SafeAreaProvider>
         </NavigationContainer>
       </BottomSheetModalProvider>
