@@ -3,12 +3,22 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { HeroImage, SwipeButton } from './Components';
 import { Logo } from '../../../assets/icons';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { AuthRoutes } from 'navigation/types/auth';
+
+// Define the navigation prop type
+type OnboardNavigationProp = StackNavigationProp<AuthRoutes, 'UserSelection'>;
 
 interface WelcomeScreenProps {}
 
 const WelcomeScreen: React.FC<WelcomeScreenProps> = () => {
+  // Use the typed navigation
+  const navigation = useNavigation<OnboardNavigationProp>();
+
   const handleComplete = () => {
-    console.log('Swipe completed! Navigating to next screen...');
+    // Now TypeScript knows 'UserSelection' is a valid route
+    navigation.navigate('UserSelection');
   };
 
   return (
