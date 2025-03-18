@@ -9,7 +9,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 
 import { pallets } from 'constant';
-import Welcome from 'screens/Welcome';
+import Welcome from 'screens/Auth/Welcome';
 
 const theme: Theme = {
   colors: {
