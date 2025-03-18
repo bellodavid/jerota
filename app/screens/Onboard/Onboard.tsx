@@ -16,7 +16,9 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = () => {
       <HeroImage />
 
       <View style={styles.contentContainer}>
-        <Logo height={70} />
+        <View style={styles.logoWrapper}>
+          <Logo height={70} />
+        </View>
 
         <View style={styles.textContainer}>
           <Text style={styles.title}>
@@ -43,6 +45,11 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     padding: 20,
+  },
+  logoWrapper: {
+    paddingHorizontal: 0,
+    marginLeft: -10,
+    alignItems: 'flex-start',
   },
   textContainer: {
     marginVertical: 30,

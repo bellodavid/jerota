@@ -1,3 +1,7 @@
 export type OnboardRoutes = {
-    Onboard: undefined;
-  };
+  Onboard: undefined;
+};
+
+export type AuthRoutes = {
+  UserSelection: undefined;
+};

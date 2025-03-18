@@ -1,1 +1,1 @@
-// Auth screens will be exported here
+export { default as UserSelection } from './UserSelection';
